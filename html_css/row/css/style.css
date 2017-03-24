@@ -1,0 +1,16 @@
+*{
+  border: 1px solid red !important;
+  
+}
+/* .col-12{
+  width: 20%;
+  background-color:red;
+} */
+/* .col-3{
+  width: 70%;
+} */
+.row{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
