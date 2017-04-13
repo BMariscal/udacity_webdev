@@ -1,0 +1,74 @@
+
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@-moz-document url-prefix(http), url-prefix(file) {
+  img:-moz-broken {
+    -moz-force-broken-image-icon: 1;
+    width: 100px;
+    height: 75px;
+  }
+
+    img {
+    width: 100%;
+    height: auto;
+}
+
+}
+
+
+    .dog {
+        width: 120px;
+        height: 120px;
+        background: url('icon.png') no-repeat;
+        background-position: center;
+        display: block;
+        margin: 10px;
+    }
+    .dog:hover {
+        background: url("js-file.png") no-repeat;
+        background-position: center;
+    }
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4c4cff;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
