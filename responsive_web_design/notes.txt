@@ -1,0 +1,31 @@
+viewport, device independent pixels(dips) vs hardware pixels:
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+
+https://developers.google.com/web/fundamentals/design-and-ui/responsive/
+
+
+Responsive meta-tag: https://css-tricks.com/snippets/html/responsive-meta-tag/
+
+
+
+max-width overwrites the width
+
+
+
+
+to make easy to hit buttons:
+
+make height and width 48px.
+(min to allow resizing)
+nav a, button{
+    min-height:48px;
+    min-width: 48px;
+}
+
+
+starting small is the way to go:
+
+https://www.youtube.com/watch?v=lJRbExkwFJI
