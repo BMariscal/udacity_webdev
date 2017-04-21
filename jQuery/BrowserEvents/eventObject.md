@@ -33,12 +33,15 @@ event.type to find what event happened - useful if listening to a target for mul
 The event object can be an incredibly useful tool! Learn more by checking out:
 
 [jQuery's Event Object](https://api.jquery.com/category/events/event-object/)
+
 [event.target property](https://api.jquery.com/event.target/)
+
 [DOM Level 3 Events](https://www.w3.org/TR/DOM-Level-3-Events/)
 
 
 * Instead of .on("click", function)
 one can use .click(function). More info below:
+
 
 [link to events](http://api.jquery.com/category/events/)
 
