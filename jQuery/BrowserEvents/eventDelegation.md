@@ -5,37 +5,40 @@ The jQuery event listener examples we've been looking at so far select the targe
 
 Be careful when setting up an event listener and then creating the target item afterwards. For example:
 
-$( 'article' ).on( 'click', function() {
-    $( 'body' ).addClass( 'selected' );
-});
 
-$( 'body' ).append( '<article> <h1>Appended Article</h1> <p>Content for the new article </p> </article>' );
+    $( 'article' ).on( 'click', function() {
+        $( 'body' ).addClass( 'selected' );
+    });
+
+    $( 'body' ).append( '<article> <h1>Appended Article</h1> <p>Content for the new article </p> </article>' );
+    
 Clicking on the "appended" article will not add a class to the body because the "appended" article was created after the event listeners were set up. When we targeted the 'article', it didn't exist yet, so jQuery added the click listener to all ZERO of our articles!
 
 But there is a way to make this scenario work by using Event Delegation. We'll listen to events that hit a parent element, and pay attention to the target of those events. Event Delegation with jQuery uses the same code we've been using, but passes an additional argument to the "on" method.
 
-$( '.container' ).on( 'click', 'article', function() { … });
+    $( '.container' ).on( 'click', 'article', function() { … });
+    
 ...this code tells jQuery to watch the .container element for clicks, and then if there are any, check if the click event's target is an article element.
 
 Another advantage in using Event Delegation is that you can use it to consolidate the number of event listeners. For example, what if you had 1,000 list items on a page:
 
-<ul id="rooms">
-    <li>Room 1</li>
-    <li>Room 2</li>
-            .
-            .
-            .
-    <li>Room 999</li>
-    <li>Room 1000</li>
-</ul>
+    <ul id="rooms">
+        <li>Room 1</li>
+        <li>Room 2</li>
+                .
+                .
+                .
+        <li>Room 999</li>
+        <li>Room 1000</li>
+    </ul>
 The following code would set up an event listener for each 1,000 event listeners - one for each list item...that's 1,000 event listeners!
 
-$( '#rooms li' ).on( 'click', function() {
-    ...
-});
+    $( '#rooms li' ).on( 'click', function() {
+        ...
+    });
 Alternatively, we can use jQuery's event delegation to set the event listener on just one element (the ul#rooms) and check if the target element is a list item;
 
-$( '#rooms' ).on( 'click', 'li', function() {
-    ...
-});
+    $( '#rooms' ).on( 'click', 'li', function() {
+        ...
+    });
 To find out more, check out jQuery's page on [Event Delegation.](https://learn.jquery.com/events/event-delegation/)
